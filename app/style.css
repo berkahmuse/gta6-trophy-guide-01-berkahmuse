@@ -1,0 +1,67 @@
+/* Leonida Ledger - light ledger theme: white paper, emerald ink rules, ruled table, sidebar book. */
+:root {
+  --paper: #fbfaf6;
+  --ink: #20302a;
+  --muted: #6a7a72;
+  --accent: #0e7a5f;
+  --accent-soft: #e3f2ec;
+  --rule: #cfd8d2;
+  --red: #b3372a;
+  --plat: #5b84ae;
+  --gold: #a87b2f;
+  --silver: #7e8a94;
+  --bronze: #b07a45;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Charter", "Source Serif", Georgia, serif; font-size: 14.5px; line-height: 1.45; }
+.page { display: grid; grid-template-columns: 340px 1fr; min-height: 100vh; }
+.side { border-right: 2px solid var(--ink); padding: 22px 22px 30px; background: #f3f1e8; }
+.brand { margin: 0; letter-spacing: 3px; font-size: 11.5px; font-weight: 700; color: var(--accent); font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+.side h1 { font-size: 25px; line-height: 1.2; margin: 8px 0; }
+.intro { color: var(--muted); margin: 0 0 14px; font-size: 13.5px; }
+.balance { border: 1.5px solid var(--ink); background: #fff; padding: 10px 13px; margin-bottom: 16px; }
+.balance p { margin: 2px 0; font-family: ui-monospace, Menlo, monospace; font-size: 13px; }
+.balance b { font-size: 16px; }
+.side-block { margin-bottom: 16px; }
+.side-block h2 { font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; border-bottom: 1px solid var(--rule); padding-bottom: 4px; margin: 0 0 8px; }
+.roadmap-list { margin: 0; padding-left: 19px; font-size: 13.5px; }
+.roadmap-list li { margin-bottom: 7px; }
+.roadmap-list .stage-n { font-family: ui-monospace, Menlo, monospace; color: var(--accent); font-weight: 700; }
+.missable-list { margin: 0; padding-left: 17px; font-size: 13.5px; }
+.missable-list li { margin-bottom: 4px; }
+.missable-list .settled { color: var(--muted); text-decoration: line-through; }
+.fine { color: var(--muted); font-size: 12.5px; }
+.io-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.io-row button, .import-btn { font-family: inherit; font-size: 13px; border: 1.5px solid var(--ink); background: #fff; padding: 6px 11px; cursor: pointer; border-radius: 3px; }
+#exportBtn { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.import-btn input { display: none; }
+.spoiler-line { display: block; margin-top: 10px; font-size: 13px; background: var(--accent-soft); padding: 7px 9px; border-radius: 4px; }
+.main { padding: 20px 26px 26px; }
+.toolbar { display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 13px; }
+#q { flex: 1 1 260px; padding: 9px 11px; border: 1.5px solid var(--ink); border-radius: 3px; font-family: inherit; font-size: 14px; background: #fff; }
+.toolbar select { padding: 8px; border: 1.5px solid var(--ink); border-radius: 3px; background: #fff; font-family: inherit; }
+table.ledger { border-collapse: collapse; width: 100%; background: #fff; border: 1.5px solid var(--ink); }
+.ledger th { text-align: left; font-size: 11.5px; letter-spacing: 1.3px; text-transform: uppercase; border-bottom: 2px solid var(--ink); padding: 8px 10px; background: var(--accent-soft); }
+.ledger td { border-bottom: 1px solid var(--rule); padding: 8px 10px; vertical-align: top; }
+.ledger tr.settled td { background: #f4f8f5; }
+.ledger tr.missable-open td.c-name { box-shadow: inset 3px 0 0 var(--red); }
+.c-done { width: 58px; text-align: center; }
+.c-done input { width: 18px; height: 18px; accent-color: var(--accent); }
+.c-name { width: 27%; }
+.tname { font-weight: 700; font-size: 14.5px; }
+.tdesc { color: var(--muted); font-size: 12.8px; font-style: italic; }
+.tflags { margin-top: 4px; display: flex; gap: 5px; flex-wrap: wrap; }
+.flag { font-size: 10.5px; font-family: ui-monospace, Menlo, monospace; border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; color: var(--muted); }
+.flag.miss { color: var(--red); border-color: var(--red); font-weight: 700; }
+.c-grade { width: 76px; }
+.grade { font-family: ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 700; text-transform: capitalize; }
+.grade.platinum { color: var(--plat); }
+.grade.gold { color: var(--gold); }
+.grade.silver { color: var(--silver); }
+.grade.bronze { color: var(--bronze); }
+.c-note p { margin: 0 0 3px; }
+.ref { color: var(--muted); font-size: 12px; font-family: ui-monospace, Menlo, monospace; }
+.c-count { width: 128px; font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; }
+.c-count button { width: 21px; height: 21px; border: 1px solid var(--rule); background: var(--paper); cursor: pointer; font-weight: 700; border-radius: 3px; }
+.hidden-name { color: var(--muted); font-style: italic; }
+.foot { color: var(--muted); font-size: 12px; margin-top: 12px; }

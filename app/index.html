@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA VI Trophy Accounts</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <aside class="side">
+    <p class="brand">LEONIDA LEDGER</p>
+    <h1>Trophy accounts, kept properly.</h1>
+    <p class="intro">All 55 official GTA VI trophies (PlayStation 5) entered as ledger lines: official name, official description, grade, and the Ledger's own note with its reference. Tick a line and it stays ticked — the book is kept in your browser.</p>
+    <div class="balance">
+      <p><b id="balEarned">0</b> of 55 settled</p>
+      <p id="balGrades">1 platinum · 2 gold · 6 silver · 46 bronze · 28 hidden</p>
+      <p><b id="balMiss">9</b> missable lines still open</p>
+    </div>
+    <div class="side-block">
+      <h2>The order of the book (roadmap)</h2>
+      <ol id="roadmapList" class="roadmap-list"></ol>
+      <p class="fine">The order is read off the official descriptions: single-mission lines fall due first, long counters run in the middle, money lines late, the 100% audit and the platinum close the book.</p>
+    </div>
+    <div class="side-block">
+      <h2>Missable lines</h2>
+      <ul id="missableList" class="missable-list"></ul>
+      <p class="fine">Flagged from the descriptions alone: one named mission (×6), one named airport, choices that cannot be amended, and a success that first requires a failure.</p>
+    </div>
+    <div class="side-block">
+      <h2>Keeping &amp; carrying the book</h2>
+      <p class="fine">Entries are stored in localStorage. Export the book to a file, import it on another browser, or audit the spoiler setting here.</p>
+      <p class="io-row">
+        <button type="button" id="exportBtn">Export book</button>
+        <label class="import-btn">Import book <input type="file" id="importFile" accept="application/json"></label>
+      </p>
+      <label class="spoiler-line"><input type="checkbox" id="spoilerBox" checked> Spoiler rule: hide the name &amp; description of unearned story lines</label>
+    </div>
+    <div class="side-block">
+      <h2>References</h2>
+      <p class="fine">Official list: Exophase, “Grand Theft Auto VI (PSN) trophies”, and PSNProfiles, “Grand Theft Auto VI trophies” — the two agree on every name, description and grade, and on the counts PlayStation tracks. Every note is the Ledger's own wording from those descriptions; nothing is copied from another guide. Unofficial; no Rockstar artwork or logos; works offline.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Search the ledger (name, mission, place, activity)…" aria-label="Search trophies">
+      <select id="kindSel" aria-label="Filter by kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="online">Partner / online</option>
+      </select>
+      <select id="gradeSel" aria-label="Filter by grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </div>
+    <table class="ledger">
+      <thead>
+        <tr><th class="c-done">Settled</th><th class="c-name">Trophy (official)</th><th class="c-grade">Grade</th><th class="c-note">Ledger note — how to settle it, with its reference</th><th class="c-count">Count</th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="foot">Leonida Ledger · an original fan-made account book for the GTA VI trophy list · not affiliated with Rockstar Games or PlayStation.</p>
+  </main>
+</div>
+<script src="ledger.js"></script>
+</body>
+</html>
